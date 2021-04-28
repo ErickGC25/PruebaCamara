@@ -9,7 +9,7 @@ const inputValor = document.querySelector("#inputValorQR");
 const qrResult = document.getElementById("qr-result");
 const outputData = document.getElementById("outputData");
 const btnScanQR = document.getElementById("btn-scan-qr");
-const container = document.querySelector("#container");
+const resultadoParrafo = document.querySelector("#ResultadoParrafo");
 
 let scanning = false;
 
@@ -18,7 +18,7 @@ qrcode.callback = (res) => {
       outputData.innerText = res;
       inputValor.value = res;
       scanning = false;
-  
+      resultadoParrafo.textContent = `${res} Mandando a BD`;  
       video.srcObject.getTracks().forEach(track => {
         track.stop();
       });
