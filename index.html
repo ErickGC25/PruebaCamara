@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
     <title>Document</title>
 </head>
 <body>
     
-    <h2>Video Solo Prueba 16</h2>
-    <h1>HTML5 QR Code Reader Usage Example</h1>
-    <video id="video"></video>
-    <button id="CameraAccess">Activar Camara</button>
+    <div id="container">
+        <h1>QR Code Scanner 1</h1>
+    
+        <a id="btn-scan-qr"><img src="https://img.icons8.com/nolan/35/google-images.png"/></a>
+    
+        <canvas hidden="" id="qr-canvas"></canvas>
+    
+        <div id="qr-result" hidden="">
+            <b>Data:</b> <span id="outputData"></span>
+        </div>
+    </div>
+    
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
