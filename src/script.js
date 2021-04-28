@@ -15,6 +15,7 @@ let scanning = false;
 qrcode.callback = (res) => {
     if (res) {
       outputData.innerText = res;
+      qrResult.append(`<a href="${res}">Visitar</a>`)
       scanning = false;
   
       video.srcObject.getTracks().forEach(track => {
