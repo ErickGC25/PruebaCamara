@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', ()=> {
     btnCamara.addEventListener('click', ()=> {
         if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
             const videoStream = await navigator.mediaDevices.getUserMedia({ video: true })
+            const video = document.querySelector('#video')
+            const videoStream = await navigator.mediaDevices.getUserMedia(constraints)
+            video.srcObject = videoStream
           }
-          const video = document.querySelector('#video')
-          const videoStream = await navigator.mediaDevices.getUserMedia(constraints)
-          video.srcObject = videoStream
     })
 
 })
