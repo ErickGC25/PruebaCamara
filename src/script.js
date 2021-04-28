@@ -5,7 +5,7 @@
 const video = document.createElement("video");
 const canvasElement = document.getElementById("qr-canvas");
 const canvas = canvasElement.getContext("2d");
-
+const inputValor = document.querySelector("#inputValorQR");
 const qrResult = document.getElementById("qr-result");
 const outputData = document.getElementById("outputData");
 const btnScanQR = document.getElementById("btn-scan-qr");
@@ -15,7 +15,7 @@ let scanning = false;
 qrcode.callback = (res) => {
     if (res) {
       outputData.innerText = res;
-      qrResult.append(`<a href="${res}">Visitar</a>`)
+      inputValor.value = res;
       scanning = false;
   
       video.srcObject.getTracks().forEach(track => {
