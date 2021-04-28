@@ -23,7 +23,7 @@ qrcode.callback = (res) => {
         track.stop();
       });
       
-      inputValor.addEventListener('onchange', () => {
+      inputValor.addEventListener('change', () => {
          const parrafoRes = document.createElement('p');
          parrafoRes.textContent = `${res} Parrafo agregado - ir a base de datos`;
          container.appendChild(parrafoRes);
