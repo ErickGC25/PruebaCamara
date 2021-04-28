@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 audio: false,
                 video: true
               })
+              alert('Viendo video')
               const videoTracks = stream.getVideoTracks()
               const track = videoTracks[0]
               alert(`Getting video from: ${track.label}`)
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
             } catch (error) {
               alert(`${error.name}`)
               console.error(error)
+              alert('Viendo video')
             }
           })
 
