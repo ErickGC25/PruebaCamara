@@ -23,13 +23,6 @@ qrcode.callback = (res) => {
         track.stop();
       });
       
-
-      if(inputValor !== "") {
-        const parrafoRes = document.createElement('p');
-        parrafoRes.textContent = `${res} Parrafo agregado - ir a base de datos`;
-        container.appendChild(parrafoRes);
-      }
-
       qrResult.hidden = false;
       btnScanQR.hidden = false;
       canvasElement.hidden = true;
