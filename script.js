@@ -4,15 +4,25 @@
 document.addEventListener('DOMContentLoaded', ()=> {
     // const video = document.querySelector("#video");
     const btnCamara = document.querySelector("#CameraAccess");
-    btnCamara.addEventListener('click', ()=> {
-        if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
-            const videoStream = await navigator.mediaDevices.getUserMedia({ video: true })
-            const video = document.querySelector('#video')
-            const videoStream = await navigator.mediaDevices.getUserMedia(constraints)
-            video.srcObject = videoStream
+    // btnCamara.addEventListener('click', ()=> {
+        document.querySelector('#CameraAccess').addEventListener('click', async function init(e) {
+            try {
+              const stream = await navigator.mediaDevices.getUserMedia({
+                audio: false,
+                video: true
+              })
+              const videoTracks = stream.getVideoTracks()
+              const track = videoTracks[0]
+              alert(`Getting video from: ${track.label}`)
+              document.querySelector('video').srcObject = stream
+              document.querySelector('#get-access').setAttribute('hidden', true)
+              setTimeout(() => { track.stop() }, 3 * 1000)
+            } catch (error) {
+              alert(`${error.name}`)
+              console.error(error)
+            }
+          })
 
-            alert('Actualizando');
-          }
-    })
+    // })
 
 })
