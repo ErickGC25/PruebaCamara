@@ -9,6 +9,7 @@ const inputValor = document.querySelector("#inputValorQR");
 const qrResult = document.getElementById("qr-result");
 const outputData = document.getElementById("outputData");
 const btnScanQR = document.getElementById("btn-scan-qr");
+const container = document.querySelector("#container");
 
 let scanning = false;
 
@@ -21,7 +22,13 @@ qrcode.callback = (res) => {
       video.srcObject.getTracks().forEach(track => {
         track.stop();
       });
-  
+      
+      inputValor.addEventListener('onchange', () => {
+         const parrafoRes = document.createElement('p');
+         parrafoRes.textContent = `${res} Parrafo agregado - ir a base de datos`;
+         container.appendChild(parrafoRes);
+      })
+
       qrResult.hidden = false;
       btnScanQR.hidden = false;
       canvasElement.hidden = true;
@@ -30,7 +37,7 @@ qrcode.callback = (res) => {
 
   btnScanQR.onclick = () =>{
   navigator.mediaDevices
-    .getUserMedia({ video: { facingMode: "environment" } })
+    .getUserMedia({ video: { facingMode: "environment" } }) // User / 
     .then(function(stream) {
       scanning = true;
       qrResult.hidden = true;
