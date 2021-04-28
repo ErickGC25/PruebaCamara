@@ -5,13 +5,12 @@ document.addEventListener('DOMContentLoaded', ()=> {
     // const video = document.querySelector("#video");
     const btnCamara = document.querySelector("#CameraAccess");
     btnCamara.addEventListener('click', ()=> {
-        navigator.mediaDevices.getUserMedia({
-            // audio: true,
-            video: true
-        }).then(stream => {
-            // video.srcObject = stream;
-        }).catch(console.error())
-
+        if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
+            const videoStream = await navigator.mediaDevices.getUserMedia({ video: true })
+          }
+          const video = document.querySelector('#video')
+          const videoStream = await navigator.mediaDevices.getUserMedia(constraints)
+          video.srcObject = videoStream
     })
 
 })
