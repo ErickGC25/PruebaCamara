@@ -7,9 +7,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     btnCamara.addEventListener('click', ()=> {
         navigator.mediaDevices.getUserMedia({
             audio: true,
-            // video: {
-            //     facingMode: { exact: "User" } //User / left / right
-            // }
+            video: true
         }).then(stream => {
             // video.srcObject = stream;
         }).catch(console.error())
