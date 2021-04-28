@@ -2,7 +2,7 @@
 
 
 document.addEventListener('DOMContentLoaded', ()=> {
-    // const video = document.querySelector("#video");
+    const video = document.querySelector("#video");
     const btnCamara = document.querySelector("#CameraAccess");
     // btnCamara.addEventListener('click', ()=> {
         document.querySelector('#CameraAccess').addEventListener('click', async function init(e) {
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
                     facingMode: { exact: "environment" } 
                 }
               })
-              alert('Viendo video')
+            //   alert('Viendo video')
               const videoTracks = stream.getVideoTracks()
               const track = videoTracks[0]
               alert(`Getting video from: ${track.label}`)
