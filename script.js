@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
             const video = document.querySelector('#video')
             const videoStream = await navigator.mediaDevices.getUserMedia(constraints)
             video.srcObject = videoStream
+
+            alert('Actualizando');
           }
     })
 
