@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
         console.log();
         navigator.mediaDevices.getUserMedia({
             audio: true,
-            video: {
-                facingMode: { exact: "User" } //User / left / right
-            }
+            // video: {
+            //     facingMode: { exact: "User" } //User / left / right
+            // }
         }).then(stream => {
             video.srcObject = stream;
         }).catch(console.error())
