@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     const btnCamara = document.querySelector("#CameraAccess");
     btnCamara.addEventListener('click', ()=> {
         navigator.mediaDevices.getUserMedia({
-            audio: true,
+            // audio: true,
             video: true
         }).then(stream => {
             // video.srcObject = stream;
